@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Other page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .box {
+        width: 80%;
+        height: 80px;
+      }
+      .bgpostion {
+        background: linear-gradient(
+          to right,
+          #ffc700 0%,
+          #e91e1e 50%,
+          #6f27b0 100%
+        );
+        background-size: 200% 100%;
+        background-position: 0 0;
+        animation: bgpostion 2s infinite linear alternate;
+      }
+
+      @keyframes bgpostion {
+        0% {
+          background-position: 0 0;
+        }
+
+        100% {
+          background-position: right 0;
+        }
+      }
+
+      .bgsize {
+        background: linear-gradient(
+          to right,
+          #ffc700 0%,
+          #e91e1e 50%,
+          #6f27b0 100%
+        );
+        background-size: 200% 100%;
+        background-position: 100% 0;
+        animation: bgsize 2s infinite linear alternate;
+      }
+
+      @keyframes bgsize {
+        0% {
+          background-size: 400% 100%;
+        }
+
+        100% {
+          background-size: 100% 100%;
+        }
+      }
+
+      .transform {
+        overflow: hidden;
+        position: relative;
+      }
+
+      .transform::before {
+        content: '';
+        display: inline-block;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          45deg,
+          #ffc700 0%,
+          #e91e1e 50%,
+          #6f27b0 100%
+        );
+        background-size: 100% 100%;
+        animation: bgtransform 4s infinite linear alternate;
+      }
+
+      @keyframes bgtransform {
+        0% {
+          transform: translate(0%, 0%);
+        }
+        25% {
+          transform: translate(-50%, 0%);
+        }
+        50% {
+          transform: translate(-50%, -50%);
+        }
+        75% {
+          transform: translate(0%, -50%);
+        }
+        100% {
+          transform: translate(0%, 0%);
+        }
+      }
+
+      .hue {
+        background: linear-gradient(45deg, #5fddcc, #ff004d);
+        animation: hueRotate 2s infinite alternate;
+      }
+
+      @keyframes hueRotate {
+        0% {
+          filter: hue-rotate(0deg);
+        }
+        100% {
+          filter: hue-rotate(360deg);
+        }
+      }
+
+      @property --colorA {
+        syntax: '<color>';
+        inherits: false;
+        initial-value: #ffc700;
+      }
+
+      @property --colorB {
+        syntax: '<color>';
+        inherits: false;
+        initial-value: #e91e1e;
+      }
+
+      @property --colorC {
+        syntax: '<color>';
+        inherits: false;
+        initial-value: #6f27b0;
+      }
+
+      .property {
+        background: linear-gradient(
+          to right,
+          var(--colorA) 0%,
+          var(--colorB) 50%,
+          var(--colorC) 100%
+        );
+        animation: propertyAnimate 5s infinite alternate;
+      }
+
+      @keyframes propertyAnimate {
+        20% {
+          --colorA: red;
+          --colorB: #a93ee0;
+          --colorC: fuchsia;
+        }
+        40% {
+          --colorA: #ff3c41;
+          --colorB: #e228a0;
+          --colorC: #2e4c96;
+        }
+        60% {
+          --colorA: orange;
+          --colorB: green;
+          --colorC: teal;
+        }
+        80% {
+          --colorA: #ae63e4;
+          --colorB: #0ebeff;
+          --colorC: #efc371;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex flex-wrap gap-10 p-2">
+      <div class="box bgpostion"></div>
+      <div class="box bgsize"></div>
+      <div class="box transform"></div>
+      <div class="box hue"></div>
+      <div class="box property"></div>
+    </div>
+  </body>
+</html>

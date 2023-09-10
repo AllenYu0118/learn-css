@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Other page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .box {
+        width: 150px;
+        height: 150px;
+      }
+      .pure {
+        background: gray;
+      }
+      .linear {
+        background: linear-gradient(#fff, #000);
+      }
+      .radial {
+        background: radial-gradient(#fff, #000);
+      }
+      .conic {
+        background: conic-gradient(#fff, #000);
+      }
+      .deg-0 {
+        background: linear-gradient(180deg, #fff, #000);
+      }
+      .deg-default {
+        background: linear-gradient(#fff, #000);
+      }
+      .deg-bottom {
+        background: linear-gradient(to bottom, #fff, #000) no-repeat;
+      }
+      .deg-other {
+        background: linear-gradient(to top left, #fff, #000);
+      }
+      .notching {
+        width: 80%;
+        height: 100px;
+        background: linear-gradient(145deg, transparent 15px, pink 0),
+          linear-gradient(-145deg, transparent 15px, pink 0),
+          linear-gradient(45deg, transparent 15px, pink 0),
+          linear-gradient(-45deg, transparent 15px, pink 0);
+        background-size: 50% 50%;
+        background-position: top left, top right, bottom left, bottom right;
+        background-repeat: no-repeat;
+      }
+
+      .strip {
+        width: 80%;
+        height: 100px;
+        background: repeating-linear-gradient(
+          45deg,
+          #f06a0e,
+          #f06a0e 11px,
+          transparent 11px,
+          transparent 20px
+        );
+      }
+      .radial-01 {
+        background: radial-gradient(
+          #9c27b0 0%,
+          #9c27b0 50%,
+          gray 50%,
+          gray 100%
+        );
+      }
+      .radial-02 {
+        background: radial-gradient(
+          #9c27b0 0%,
+          #9c27b0 50%,
+          gray 50.9%,
+          gray 100%
+        );
+      }
+      .conic-01 {
+        background: conic-gradient(
+          from -45deg,
+          #000 0 90deg,
+          #fff 0 180deg,
+          #000 0 270deg,
+          #fff 0 360deg
+        );
+      }
+      .conic-02 {
+        background: conic-gradient(
+          from -45deg,
+          #000 0 25%,
+          #f80 25% 50%,
+          #000 50% 75%,
+          #f80 75% 100%
+        );
+        background-size: 30px 30px;
+      }
+      .conic-03 {
+        background: conic-gradient(
+            from 270deg at 50px 50px,
+            #fff 25%,
+            #000 25% 100%
+          )
+          #000;
+        background-position: -25px -25px;
+      }
+
+      .repeat-conic-01 {
+        background: repeating-conic-gradient(#000, #fff, #000 30deg);
+      }
+      .repeat-conic-02 {
+        background: repeating-conic-gradient(#000, #fff, #000 0.1deg);
+      }
+      .repeat-conic-03 {
+        background: repeating-conic-gradient(#000, #fff, #000 0.1deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex flex-wrap gap-10 p-2">
+      <div class="box pure"></div>
+      <div class="box linear"></div>
+      <div class="box radial"></div>
+      <div class="box conic"></div>
+    </div>
+
+    <div class="flex flex-wrap gap-10 p-2">
+      <div class="box deg-0"></div>
+      <div class="box deg-default"></div>
+      <div class="box deg-bottom"></div>
+      <div class="box deg-other"></div>
+    </div>
+
+    <div class="flex flex-wrap gap-10 mt-5 justify-center p-2">
+      <div class="box notching"></div>
+      <div class="box strip"></div>
+    </div>
+
+    <div class="flex flex-wrap gap-10 mt-5 p-2">
+      <div class="box radial-01"></div>
+      <div class="box radial-02"></div>
+    </div>
+
+    <div class="flex flex-wrap gap-10 mt-5 p-2">
+      <div class="box conic-01"></div>
+      <div class="box conic-02"></div>
+      <div class="box conic-03"></div>
+    </div>
+
+    <div class="flex flex-wrap gap-10 mt-5 p-2">
+      <div class="box repeat-conic-01"></div>
+      <div class="box repeat-conic-02"></div>
+      <div class="box repeat-conic-03"></div>
+    </div>
+  </body>
+</html>
