@@ -207,10 +207,6 @@
         color: transparent;
       }
 
-      /**
-       * https://codepen.io/Chokcoco/pen/OJbEOmb
-       * 令人困惑，和 demo 代码一致，效果不一致
-      */
       .clip-text-shine {
         line-height: 80px;
         border: 1px dashed #999;
@@ -234,7 +230,7 @@
           120deg,
           transparent 0%,
           transparent 6rem,
-          white 11rem,
+          red 11rem,
           transparent 11.15rem,
           transparent 15rem,
           rgba(255, 255, 255, 0.3) 20rem,
@@ -265,6 +261,36 @@
           background-position: -190% 0;
         }
       }
+
+      .text {
+        line-height: 20px;
+        background: linear-gradient(to right, blue, green);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        transition: all 1s linear;
+      }
+
+      .text:hover {
+        background-size: 0 100%;
+        cursor: pointer;
+      }
+
+      .text-fade {
+        line-height: 22px;
+        background: linear-gradient(to right, transparent, transparent 80%, #fff);
+        color: #000;
+        color: transparent;
+      }
+
+      .text-fade::after {
+        content: attr(data-text);
+        color: #000;
+        position: absolute;
+        left: 0;
+        top: 0;
+        line-height: 24px;
+        z-index: -1;
+      }
     </style>
   </head>
   <body>
@@ -293,10 +319,29 @@
       <div class="box hue clip-text-animation">BACKGROUND-CLIP: TEXT</div>
     </div>
 
-    <div class="flex flex-wrap gap-10 p-2">
+    <div class="flex flex-wrap gap-10 p-2 bg-gray">
       <div class="box clip-text-shine" data-text="BACKGROUND-CLIP: TEXT">
         BACKGROUND-CLIP: TEXT
       </div>
+    </div>
+
+    <p class="border border-2 p-2 text mb-10 m-2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dicta
+      incidunt ut illo, ratione aut reprehenderit facilis mollitia saepe ducimus
+      libero hic reiciendis deserunt optio veniam ullam. Beatae, non quae.
+    </p>
+
+    <div class="border border-2 p-2 mt-10 m-2">
+      <a class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dicta
+        incidunt ut illo, ratione aut reprehenderit facilis mollitia saepe
+        ducimus libero hic reiciendis deserunt optio veniam ullam. Beatae, non
+        quae.
+      </a>
+    </div>
+
+    <div class="relative m-2 w-[400px]">
+      <span class="text-fade" data-text="Mollitia nostrum placeat consequatur deserunt velit ducimus possimus commodi temporibus debitis quam">Mollitia nostrum placeat consequatur deserunt velit ducimus possimus commodi temporibus debitis quam</span>
     </div>
   </body>
 </html>
