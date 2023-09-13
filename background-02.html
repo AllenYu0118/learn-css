@@ -277,7 +277,12 @@
 
       .text-fade {
         line-height: 22px;
-        background: linear-gradient(to right, transparent, transparent 80%, #fff);
+        background: linear-gradient(
+          to right,
+          transparent,
+          transparent 80%,
+          #fff
+        );
         color: #000;
         color: transparent;
       }
@@ -290,6 +295,20 @@
         top: 0;
         line-height: 24px;
         z-index: -1;
+      }
+
+      .text-hover {
+        background: linear-gradient(to right, blue, green, red);
+        background-size: 0 3px;
+        background-repeat: no-repeat;
+        background-position: 0 100%;
+      }
+
+      .text-hover:hover {
+        background-size: 100% 3px;
+        background-position: 100% 100%;
+        transition: all 1s linear;
+        cursor: pointer;
       }
     </style>
   </head>
@@ -341,7 +360,118 @@
     </div>
 
     <div class="relative m-2 w-[400px]">
-      <span class="text-fade" data-text="Mollitia nostrum placeat consequatur deserunt velit ducimus possimus commodi temporibus debitis quam">Mollitia nostrum placeat consequatur deserunt velit ducimus possimus commodi temporibus debitis quam</span>
+      <span
+        class="text-fade"
+        data-text="Mollitia nostrum placeat consequatur deserunt velit ducimus possimus commodi temporibus debitis quam"
+        >Mollitia nostrum placeat consequatur deserunt velit ducimus possimus
+        commodi temporibus debitis quam</span
+      >
+    </div>
+
+    <div class="m-2">
+      Mollitia nostrum placeat consequatur deserunt velit ducimus possimus
+      commodi temporibus debitis quam Mollitia nostrum placeat consequatur
+      deserunt velit ducimus possimus
+      <span class="text-hover"
+        >Mollitia nostrum placeat consequatur deserunt velit ducimus possimus
+        commodi temporibus debitis quam Mollitia nostrum placeat consequatur
+      </span>
+      Mollitia nostrum placeat consequatur deserunt velit ducimus possimus
+      commodi commodi temporibus debitis quam
+    </div>
+
+    <style>
+      .attachment {
+        width: 550px;
+        height: 200px;
+        overflow-y: scroll;
+      }
+      .attachment-01 {
+        background-image: url('https://fastly.picsum.photos/id/110/600/200.jpg?hmac=ulb6wLs1jirINDXNo6TXvr7DsDMmBtGtUk97JnVToSY');
+        background-repeat: no-repeat;
+        background-size: 100% cover;
+        background-attachment: scroll;
+      }
+
+      .attachment-02 {
+        background-image: url('https://fastly.picsum.photos/id/110/600/200.jpg?hmac=ulb6wLs1jirINDXNo6TXvr7DsDMmBtGtUk97JnVToSY');
+        /* background-repeat: no-repeat; */
+        background-size: 100% cover;
+        background-attachment: fixed;
+      }
+
+      .attachment-03 {
+        background-image: url('https://fastly.picsum.photos/id/110/600/200.jpg?hmac=ulb6wLs1jirINDXNo6TXvr7DsDMmBtGtUk97JnVToSY');
+        /* background-repeat: no-repeat; */
+        background-size: 100% cover;
+        background-attachment: local;
+      }
+
+      .attachment-04 {
+        width: 100%;
+        overflow-y: initial;
+      }
+
+      .attachment-04 p {
+        height: 100vh;
+        line-height: 100vh;
+        font-size: 50px;
+        text-align: center;
+        color: #fff;
+        background-size: 100% cover;
+        background-attachment: fixed;
+      }
+
+      .attachment-04 p:nth-child(1) {
+        background-image: url('https://fastly.picsum.photos/id/350/1200/1000.jpg?hmac=zpMnm4AleegqOY-NDLBsQGMsY-RADW59NWcKu13uTGI');
+      }
+      .attachment-04 p:nth-child(2) {
+        background-image: url('https://fastly.picsum.photos/id/111/1200/1000.jpg?hmac=wgwRh0W3wRyM19UaPZpq839bqZNgeE_jw00NGF6FcXg');
+      }
+      .attachment-04 p:nth-child(3) {
+        background-image: url('https://fastly.picsum.photos/id/616/1200/1000.jpg?hmac=yslXNgvGAQH-Miu_kIEYeYpb24xfv8w3MO5aNjkXr6g');
+      }
+    </style>
+    <div class="m-2 mt-10">
+      <h3 class="text-[30px] text-center">background-attachment: scroll</h3>
+      <div class="attachment attachment-01">
+        <p class="text-center h-20 text-[20px] text-red-600">01</p>
+        <p class="text-center h-20 text-[20px] text-red-600">02</p>
+        <p class="text-center h-20 text-[20px] text-red-600">03</p>
+        <p class="text-center h-20 text-[20px] text-red-600">04</p>
+        <p class="text-center h-20 text-[20px] text-red-600">05</p>
+      </div>
+    </div>
+
+    <div class="m-2 mt-10">
+      <h3 class="text-[30px] text-center">background-attachment: fixed</h3>
+      <div class="attachment attachment-02">
+        <p class="text-center h-20 text-[20px] text-red-600">01</p>
+        <p class="text-center h-20 text-[20px] text-red-600">02</p>
+        <p class="text-center h-20 text-[20px] text-red-600">03</p>
+        <p class="text-center h-20 text-[20px] text-red-600">04</p>
+        <p class="text-center h-20 text-[20px] text-red-600">05</p>
+      </div>
+    </div>
+
+    <div class="m-2 mt-10">
+      <h3 class="text-[30px] text-center">background-attachment: local</h3>
+      <div class="attachment attachment-03">
+        <p class="text-center h-20 text-[20px] text-red-600">01</p>
+        <p class="text-center h-20 text-[20px] text-red-600">02</p>
+        <p class="text-center h-20 text-[20px] text-red-600">03</p>
+        <p class="text-center h-20 text-[20px] text-red-600">04</p>
+        <p class="text-center h-20 text-[20px] text-red-600">05</p>
+      </div>
+    </div>
+
+    <div class="m-2 mt-10">
+      <h3 class="text-[30px] text-center">滚动视差</h3>
+      <div class="attachment attachment-04">
+        <p>区域 01</p>
+        <p>区域 02</p>
+        <p>区域 03</p>
+      </div>
     </div>
   </body>
 </html>
