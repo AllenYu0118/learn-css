@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .box {
+        width: 90%;
+        border: 1px dashed #bbb;
+        height: 100px;
+        margin: 10px auto;
+      }
+
+      .mask-01 {
+        background: url('https://i.pinimg.com/originals/e8/ba/25/e8ba252917952f23dfc9715e942e654e.jpg')
+          no-repeat;
+        -webkit-mask: linear-gradient(90deg, transparent, blue);
+      }
+
+      .mask-02 {
+        background: url('https://i.pinimg.com/originals/e8/ba/25/e8ba252917952f23dfc9715e942e654e.jpg')
+          no-repeat;
+        -webkit-mask: linear-gradient(135deg, transparent 15px, #fff 0) top left,
+          linear-gradient(-135deg, transparent 15px, #fff 0) top right,
+          linear-gradient(-45deg, transparent 15px, #fff 0) bottom right,
+          linear-gradient(45deg, transparent 15px, #fff 0) bottom left;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: 50% 50%;
+      }
+
+      .mask-03 {
+        line-height: 100px;
+        background-image: linear-gradient(to right, blue, green, red);
+        -webkit-mask: radial-gradient(
+            circle at top left,
+            transparent,
+            transparent 25px,
+            #fff 16px
+          ),
+          radial-gradient(
+              circle at top right,
+              transparent,
+              transparent 25px,
+              #fff 16px
+            )
+            top right,
+          radial-gradient(
+              circle at bottom left,
+              transparent,
+              transparent 25px,
+              #fff 16px
+            )
+            bottom left,
+          radial-gradient(
+              circle at bottom right,
+              transparent,
+              transparent 25px,
+              #fff 16px
+            )
+            bottom right;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: 50% 50%;
+      }
+
+      .mask-04 {
+        height: 50px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        overflow-x: scroll;
+        -webkit-mask: linear-gradient(to right, #000 70%, transparent 90%, transparent 100%);
+      }
+      .mask-04 li {
+        padding: 5px 10px;
+      }
+      .mask-04 button {
+        width: 70px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box mask-01"></div>
+
+    <div class="box mask-02"></div>
+
+    <div class="box mask-03 text-center text-[#fff] text-[30px]">
+      inset circle
+    </div>
+
+    <style></style>
+    <div class="box h-[50px]">
+      <ul class="mask-04">
+        <li><button>按钮</button></li>
+        <li><button>按钮</button></li>
+        <li><button>按钮</button></li>
+        <li><button>按钮</button></li>
+        <li><button>按钮</button></li>
+        <li><button>按钮</button></li>
+        <li><button>按钮</button></li>
+        <li><button>按钮</button></li>
+        <li><button>按钮</button></li>
+      </ul>
+    </div>
+  </body>
+</html>
