@@ -71,7 +71,12 @@
         flex-wrap: nowrap;
         align-items: center;
         overflow-x: scroll;
-        -webkit-mask: linear-gradient(to right, #000 70%, transparent 90%, transparent 100%);
+        -webkit-mask: linear-gradient(
+          to right,
+          #000 70%,
+          transparent 90%,
+          transparent 100%
+        );
       }
       .mask-04 li {
         padding: 5px 10px;
@@ -79,6 +84,62 @@
       .mask-04 button {
         width: 70px;
         border: 1px solid #ccc;
+      }
+
+      .mask-05 {
+        background: url('https://n.sinaimg.cn/ent/crawl/115/w1777h738/20200609/cf08-iuvaazn4779753.jpg')
+          no-repeat;
+        background-size: 100% auto;
+        position: relative;
+      }
+
+      .mask-05::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        background: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg9.doubanio.com%2Fview%2Fphoto%2Fl%2Fpublic%2Fp2630806046.jpg&refer=http%3A%2F%2Fimg9.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1697551092&t=37c365bd363a11f22dad39d30aaa2b4c')
+          50% 30% no-repeat;
+        background-size: 100% auto;
+        -webkit-mask: linear-gradient(45deg, #000 50%, transparent 50%);
+      }
+
+      .mask-06::before {
+        -webkit-mask: linear-gradient(45deg, #000 40%, transparent 60%);
+      }
+
+      .mask-07 {
+        background: url('https://n.sinaimg.cn/ent/crawl/115/w1777h738/20200609/cf08-iuvaazn4779753.jpg')
+          no-repeat;
+        background-size: 100% auto;
+      }
+
+      .mask-07 .inner {
+        background: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg9.doubanio.com%2Fview%2Fphoto%2Fl%2Fpublic%2Fp2630806046.jpg&refer=http%3A%2F%2Fimg9.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1697551092&t=37c365bd363a11f22dad39d30aaa2b4c')
+          no-repeat;
+        background-size: 100% auto;
+        -webkit-mask: linear-gradient(
+          90deg,
+          #fff 0%,
+          #fff 50%,
+          transparent 50%,
+          transparent 100%
+        );
+        -webkit-mask-size: 200% 100%;
+        animation: maskChange 2s infinite alternate linear;
+      }
+
+      @keyframes maskChange {
+        0% {
+          -webkit-mask-position: -100% 0;
+        }
+
+        100% {
+          -webkit-mask-position: 0 0;
+        }
       }
     </style>
   </head>
@@ -91,7 +152,6 @@
       inset circle
     </div>
 
-    <style></style>
     <div class="box h-[50px]">
       <ul class="mask-04">
         <li><button>按钮</button></li>
@@ -104,6 +164,14 @@
         <li><button>按钮</button></li>
         <li><button>按钮</button></li>
       </ul>
+    </div>
+
+    <div class="box h-[200px] mask-05"></div>
+
+    <div class="box h-[200px] mask-05 mask-06"></div>
+
+    <div class="box h-[200px] mask-07">
+      <div class="inner"></div>
     </div>
   </body>
 </html>
